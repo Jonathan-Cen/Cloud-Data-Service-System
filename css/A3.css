@@ -1,0 +1,353 @@
+/*Top Navigation*/
+
+.topnav {
+    overflow: hidden;
+    background-color: #ca4646;
+    height:46px;/*46px*/
+    vertical-align: middle;
+    justify-content: left;
+    display:flex;
+    flex-direction: row;
+ 
+  }
+
+  .searching input[type=text] {
+    float: left;
+    border: none;
+    width: 50%;
+    height:90%;
+    vertical-align: center;
+    margin-top: 0.15%;
+    margin-left:23px;;
+    font-size: 17px;
+  }
+
+  .searching button{
+      height:96.1%;
+      margin-top: 0.04%;
+  }
+
+.searching{
+    width: 95%;
+    margin-left:200px;
+}
+.buttons{
+    float: right;   
+    display:flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.buttons img{
+    width: 40px; 
+    height:40px;
+    border-radius: 50%;
+    margin-right: 1%;  
+
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .sticky + .w3-main {
+    padding-top: 60px;
+  }
+
+
+  /*****************************************************************
+  ***************** Profile / Storage Dropdowns ********************
+  *****************************************************************/
+.dropbtn, .upload-btn{
+
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+.dropbtn:hover, .dropbtn:focus, .upload-btn:hover{
+    background-color: #2980B9;
+  }
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content-storage, .dropdown-content-profile {
+    display: none;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position:fixed;
+    margin-top:46px;
+    z-index: 1;
+  }
+
+  .dropdown-content-storage{min-width: 200px;}
+  .dropdown-content-profile{min-width: 170px;}
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover{background-color: #ddd}
+  
+
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+
+  /*****************************************************************
+  *********************Groups on home page**************************
+  *****************************************************************/
+.homePage{
+    margin-top: 46px;;
+    
+}
+
+.flex-box-groups{
+    display:flex;
+    flex-direction: row;
+    padding:10px;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin-left: 250;
+    
+}
+
+.flex-box-groups img{
+    margin: 10px;
+}
+
+  /*****************************************************************
+  *********************Files on home page**************************
+  *****************************************************************/
+.flex-box-files{
+    display:flex;
+    flex-direction: row;
+    padding:10px;
+    justify-content: left;
+    flex-wrap: wrap;
+    text-align: center;
+    width:100%;
+    
+}
+.individual_files{
+    margin-top: 1%;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    margin-right: 3%;
+
+}
+
+.individual_files img{
+    cursor: pointer;
+}
+/********************* Overlay Effect    *************************/
+
+  .overlay {
+    position: absolute;
+    bottom: 1;
+    left: 0;
+    right: 0;
+    background-color: rgb(185, 198, 202);
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.7);
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 19%;
+    border-bottom-right-radius: 19%;
+    overflow: hidden;
+    width:100%;
+    align-self: center;
+    height: 0;
+    transition: .5s ease;
+    cursor: pointer;
+  }
+  
+  .individual_files:hover .overlay {
+    height: 90%;
+  }
+  
+  .text {
+    color: rgb(7, 7, 7);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+
+
+  /*****************************************************************
+  *********************Tooltips for groups**************************
+  *****************************************************************/
+
+.tooltip {
+    
+    cursor: zoom-in; 
+    text-decoration: none;
+    position: relative;
+}
+
+
+.tooltip span {
+    margin-left: -999em;
+    position: absolute;
+}
+
+
+.tooltip:hover span {
+    border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; 
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(253, 252, 252);
+    font-family: Calibri, Tahoma, Geneva, sans-serif;
+    position: absolute; 
+    left: 1em; 
+    top: 2em; 
+    z-index: 99;
+    margin-left: 0; 
+    display: block;
+    width: 200px;
+}
+
+  /*****************************************************************
+  ********************* Share Page Pop Up  **************************
+  *****************************************************************/
+
+ .share_to_groups, .multi-files-sharing{
+
+   border-width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   flex-wrap: wrap;
+ }
+
+ .share_to_groups div{
+   width:200px;
+   overflow: hidden;
+
+   height:30px;
+   vertical-align: middle;
+ }
+.multi-files-sharing div{
+  width:230px;
+  overflow: hidden;
+
+  height:30px;
+  vertical-align: middle;
+}
+
+.copyToShare{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.copy-button{
+  border:none;
+  padding: 8px;
+  height: 40px;
+  vertical-align: middle;
+  margin-top: -9px;
+  cursor: pointer;
+  color: #000!important;
+  background-color: #81a5d4!important;
+}
+.copy-button:hover{
+  background-color: #558cd4!important;
+}
+
+
+  /*****************************************************************
+  ********************* Individual File Page  **********************
+  *****************************************************************/
+  .file{
+    margin-left: 25px;
+  }
+ .file p{
+   width: 60%;
+   text-align: justify;
+ }
+
+ .fa-clock-o, .fa-user{
+   margin-left:8px;
+   margin-right:10px;
+ }
+
+ .file h5{
+   margin-left:8px;
+ }
+ .file img{
+   margin-left: 10px;
+ }
+ 
+
+ .individual_files p{
+    font-size: 15px;
+ }
+
+
+  /*****************************************************************
+  ********************* Individual Group Page  *********************
+  *****************************************************************/
+
+ .group_page {
+   margin-left: 60px;
+ }
+ .group_page a{
+   cursor: pointer;
+ }
+
+
+ 
+  /*****************************************************************
+  ********************* Settings Page  *****************************
+  *****************************************************************/
+
+ .settings_content{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 800px;
+   justify-content: space-between;
+
+ }
+
+ 
+
+ .settings a{
+   color: blue;
+   margin-left: 30px;
+   float: right;
+ }
+
+ .settings{
+   margin-left: 60px;
+ }
+
+ /* .space_below{
+   margin-bottom: 30px;
+ } */
+
+ .all_settings_content{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+ }
+
+

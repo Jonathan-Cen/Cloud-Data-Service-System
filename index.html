@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<!--- Author: Jonathan Cen --->
+
+<html lang="en">
+<title>Assignment 3 Base code Adapted from W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./css/w3.css"> <!--Provided by A3 base code but dowloaded as a local file to allow no internet access-->
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'> <!--Provided by A3 base code-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Provided by A3 base code-->
+<link rel="stylesheet" href="./css/A3.css"> <!---Created by Jonathan Cen-->
+<style>
+    html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif}
+    .w3-bar-block .w3-bar-item {padding: 16px}
+</style>
+<body>
+
+    <!-- Side Navigation -->
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-white w3-animate-left w3-card" style="z-index:3;width:220px;" id="mySidebar">
+        <a href="#HomePage" class="w3-bar-item w3-button w3-border-bottom w3-hover-black w3-large" onclick="doShare('HomePage')" id="firstTab"><i class="fa fa-edit"></i> &nbsp; Home</a> 
+        
+        <a href="javascript:void(0)" onclick="w3_close()" title="Close Sidemenu" class="w3-bar-item w3-button w3-hide-large w3-large">Close <i class="fa fa-remove"></i></a>
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-dark-grey w3-button w3-hover-black w3-left-align" onclick="document.getElementById('id01').style.display='block'">Share File <i class="w3-padding 	fa fa-share-square-o"></i></a>
+        
+
+        <a id="myBtn" onclick="myFunc('Demo2')" href="javascript:void(0)" class="w3-bar-item w3-button"><i class="fa fa-group w3-margin-right"></i>All Groups<i class="fa fa-caret-down w3-margin-left"></i></a>
+        
+        <div id="Demo2" class="w3-hide w3-animate-left"> 
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('cs345_group_page'); w3_close(); createFiles(['html_file_homepage','css_file_homepage','word_file_homepage', 'pdf_file_homepage', 'javascript_file_homepage'], 'cs345_group_page_content')" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+                <div class="w3-container" style="display:flex; flex-direction: row;">
+                  <i class="fa fa-asl-interpreting" style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                  <span class="w3-opacity w3-large"> <p style="font-size: small; font-weight: bold;"> COMPSCI 345 Group 6 </p>  </span>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('cs351_group_page');w3_close(); createFiles(['powerpoint_file_homepage'], 'cs351_group_page_content');" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; "> 
+                <div class="w3-container" style="display:flex; flex-direction: row;">
+                  <i class="fa fa-database " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                  <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> COMPSCI 351 Group 10 </p> </span>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('cs373_group_page');w3_close(); createFiles(['php_file_homepage'], 'cs373_group_page_content');" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+                <div class="w3-container" style="display:flex; flex-direction: row;">
+                  <i class="fa fa-arrows-alt " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                  <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> COMPSCI 373 Group 10 </p> </span>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('cs230_group_page');w3_close(); createFiles(['zip_file_homepage', 'excel_file_homepage', 'java_file_homepage'], 'cs230_group_page_content');" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-code " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> COMPSCI 230 Group 20 </p> </span>
+              </div>
+            </a>                      
+        </div>
+
+
+
+
+        <a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button"><i class="fa fa-inbox w3-margin-right"></i>All Files<i class="fa fa-caret-down w3-margin-left"></i></a>
+        
+        <div id="Demo1" class="w3-hide w3-animate-left">
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('zip_file'); w3_close();"  style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+                <div class="w3-container" style="display:flex; flex-direction: row;">
+                  <i class="fa fa-file-zip-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                  <span class="w3-opacity w3-large"> <p style="font-size: small; font-weight: bold;"> CS230_A3.zip </p>  </span>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('html_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; "> 
+                <div class="w3-container" style="display:flex; flex-direction: row;">
+                  <i class="fa fa-file-code-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                  <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS345_A3.html </p> </span>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('css_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+                <div class="w3-container" style="display:flex; flex-direction: row;">
+                  <i class="fa fa-file-code-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                  <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS345_A3.css </p> </span>
+                </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('word_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-word-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS345_A3_Report.docx </p> </span>
+              </div>
+            </a>
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('pdf_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-pdf-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS345_A3.pdf </p> </span>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('javascript_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-code-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS345_A3.js </p> </span>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('excel_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-excel-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS230_Lab_Data.xlsx </p> </span>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('powerpoint_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-powerpoint-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS351_Presentation.pptx </p> </span>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('java_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-code-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS230_A1.java </p> </span>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('jpg_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-picture-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> Group_photo_1.jpg </p> </span>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('php_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-code-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> CS373_practice.php </p> </span>
+              </div>
+            </a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="doShare('mp3_file');w3_close();" style="padding-top: 2px; padding-bottom: 2px; padding-left: 0px; ">
+              <div class="w3-container" style="display:flex; flex-direction: row;">
+                <i class="fa fa-file-sound-o " style="padding-top: 2px; padding-left: 0px; margin-left: 0px; padding-top: 15px; margin-right: 10px;;"></i>
+                <span class="w3-opacity w3-large"><p style="font-size: small; font-weight: bold;"> My_Heart_Will_Go_On.mp3 </p> </span>
+              </div>
+            </a>           
+        </div>
+
+
+
+        
+        
+        <a href="#" class="w3-bar-item w3-button" onclick="doShare('MyDrive'); w3_close()"><i class="fa fa-folder-open w3-margin-right"></i>My Drive</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="doShare('settings'); w3_close()"><i class="fa fa-gear w3-margin-right"></i>Settings</a>
+    </nav>
+
+
+
+<!-- Modal that pops up when you click on "Share File" -->
+<div id="id01" class="w3-modal" style="z-index:4" >
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-padding w3-red">
+       <span onclick="document.getElementById('id01').style.display='none'; resetShareForm('email1','textArea1', 'dropdown-list1');"class="w3-button w3-red w3-right w3-xxlarge" ><i class="fa fa-remove"></i></span>
+      <h2>Share File</h2>
+    </div>
+    <div class="w3-panel">
+      <div class="copyToShare">
+        <label class="w3-left" style="font-weight: bold;">Share file(s) with link</label>
+        <a class="copy-button" onclick="getLink(true)"  > Get Shareable Link  <i class="fa fa-copy"></i></a> 
+      </div>
+            
+      <label style="font-weight: bold;">Share to email (use semicolon to seperate multiple email addresses)</label>
+      <br>
+      <input class="w3-input w3-border w3-margin-bottom Email" type="email" multiple placeholder = "Enter email address" id="email1" onblur="withinOrganisation('email1');" >
+      <label style="font-weight: bold;">Share to groups</label>
+    
+    <div class="share_to_groups">
+      <div>
+        <input type="checkbox" class="checkbox share-checkbox" id="CS345_Group_6_checkbox1">
+        <label for="CS345_Group_6_checkbox1"> CS 345 Group 6</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox share-checkbox" id="CS351_Group_10_checkbox1">
+        <label for="CS351_Group_10_checkbox1"> CS 351 Group 10</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox share-checkbox" id="CS373_Group_10_checkbox1">
+        <label for="CS373_Group_10_checkbox1"> CS 373 Group 10</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox share-checkbox" id="CS230_Group_20_checkbox1">
+        <label for="CS230_Group_20_checkbox1"> CS 230 Group 20</label>
+      </div>
+    </div>
+
+    <!--Select Files with permission-->
+    <div class="copyToShare">
+      <label style="font-weight: bold;">Select file(s)</label>
+      <label class="w3-left" style="font-weight: bold;">Recipient's permission:  
+        <select name="shareLink" id="dropdown-list1">
+          <option value="View">View</option>
+          <option value="Edit">Edit</option>
+          <option value="Download">Download</option>
+        </select>
+      </label>
+    </div>
+    
+    <div class="multi-files-sharing">
+      <div>
+        <input type="checkbox"  class="checkbox file-checkbox" id="CS230_A3.zip_checkbox">
+        <label for="CS230_A3.zip_checkbox"> CS230_A3.zip</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS345_A3.html_checkbox">
+        <label for="CS345_A3.html_checkbox"> CS345_A3.html</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS345_A3.css_checkbox">
+        <label for="CS345_A3.css_checkbox"> CS345_A3.css</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS345_A3_Report.docx_checkbox">
+        <label for="CS345_A3_Report.docx_checkbox"> CS345_A3_Report.docx</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS345_A3.pdf_checkbox">
+        <label for="CS345_A3.pdf_checkbox"> CS345_A3.pdf</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS345_A3.js_checkbox">
+        <label for="CS345_A3.js_checkbox"> CS345_A3.js</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS230_Lab_Data.xlsx_checkbox">
+        <label for="CS230_Lab_Data.xlsx_checkbox"> CS230_Lab_Data.xlsx</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS351_Presentation.pptx_checkbox">
+        <label for="CS351_Presentation.pptx_checkbox"> CS351_Presentation.pptx</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS230_A1.java_checkbox">
+        <label for="CS230_A1.java_checkbox"> CS230_A1.java</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="Group_photo_1.jpg_checkbox">
+        <label for="Group_photo_1.jpg_checkbox"> Group_photo_1.jpg</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="CS373_practice.php_checkbox">
+        <label for="CS373_practice.php_checkbox"> CS373_practice.php</label>
+      </div>
+      <div>
+        <input type="checkbox" class="checkbox file-checkbox" id="My_Heart_Will_Go_On.mp3_checkbox">
+        <label for="My_Heart_Will_Go_On.mp3_checkbox"> My_Heart_Will_Go_On.mp3</label>
+      </div>
+    </div>
+    
+  
+      <label style="font-weight: bold;">Leave a brief description (Optional)</label>
+      <textarea   style="height:40px;width:100%; OVERFLOW: hidden" warp="virtual" placeholder="description" id="textArea1"></textarea>
+      <div></div>
+      <div class = "notifyingMyself&Members" style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 20px; margin-bottom: 0px; padding-bottom: 0px; font-weight: bold; ">
+        <div>
+          <input type = "checkbox" class="checkbox" id="notifyMe1"><!--style="float: right; margin-top: 20px; margin-right: 5px;"-->
+          <label for="notifyMe1">Notify me when group members open the file(s) </label> <!-- style="float:right; margin-top: 15px;"-->
+        </div>
+        <div>
+          <input type = "checkbox" class="checkbox" id="notifyGroupMembers1"><!--style="float: right; margin-top: 20px; margin-right: 5px;"-->
+          <label for="notifyGroupMembers1">Notify group members </label> <!-- style="font-weight: bold; float:right; margin-top: 15px;"-->
+        </div>
+      </div>
+      <div class="w3-section">
+        <a class="w3-button w3-red" onclick="document.getElementById('id01').style.display='none'; resetShareForm('email1','textArea1', 'dropdown-list1'); ">Cancel  <i class="fa fa-remove"></i></a>
+        <a class="w3-button w3-light-grey w3-right" onclick="preventEmptyForm(true,'id01', 'email1','textArea1', 'dropdown-list1');"> Share  <i class="fa fa-paper-plane"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    <!-- Overlay effect when opening the side navigation on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="Close Sidemenu" id="myOverlay"></div>
+
+    <!--- Top Navigation Bar style="margin-left:200px;" -->
+    <div class="topnav"  id="topNavBar">
+      <form class="searching" id="searchBox">
+        <input type="text"  >
+        <button type="submit" onclick="resetSearch()"><i class="fa fa-search"></i></button>
+      </form>
+      <div class="buttons">
+        <img class="upload-btn" src="./resources/upload.png" alt="upload" style="margin-top: 3px;" onclick="document.getElementById('id02').style.display='block'">
+        <img onclick="openDropDown('storage_dropdown'); closeDropDown('profile_dropdown');" src="./resources/storage_icon.png" alt="storage_icon" class="dropbtn " style="margin-top: 4.5px;">   
+         <!---Profile Dropdown List-->
+        <div id="profile_dropdown" class="dropdown-content  dropdown-content-profile">
+          <a href="#">Log Out</a>
+        </div>
+
+        <img onclick="openDropDown('profile_dropdown'); closeDropDown('storage_dropdown'); " src="./resources/profile2.png" alt="profile_icon" class="dropbtn" style="margin-top: 2px;">
+        <!---Storage Dropdown List-->
+        <div id="storage_dropdown"  class="dropdown-content dropdown-content-storage">
+          <p style="padding-left: 12px; padding-right: 12%; ">16% storage is used</p>
+          <a href="#">Buy Storage</a>
+        </div>  
+      </div>
+      
+      
+    </div>
+    
+    
+    
+
+
+
+    <!-- Page content -->
+    <div class="w3-main w3-margin-top" style="margin-left:200px; z-index: -1; position:absolute;"> <!--- z axis effect so dropdowns can lay on top-->
+      <i class="fa fa-bars w3-button w3-white w3-hide-large w3-xlarge w3-margin-left w3-margin-top" onclick="w3_open()"></i>
+      <a href="javascript:void(0)" class="w3-hide-large w3-red w3-button w3-right w3-margin-top w3-margin-right" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-pencil"></i></a>
+      
+      <!---Homepage-->
+      <div id="HomePage" class="w3-container file homePage">
+        <!---Groups on Homepage-->
+        <div class="container-1">
+           <h3 style="font-weight: bold;">Groups:</h3>
+           <div class="flex-box-groups">
+            <a class="tooltip" href="#" onclick="doShare('cs345_group_page'); createFiles(['html_file_homepage','css_file_homepage','word_file_homepage', 'pdf_file_homepage', 'javascript_file_homepage'], 'cs345_group_page_content')"><img src="./resources/cs345.png" alt="cs345" style="border-radius: 10%; width: 200px; height: 120px;">
+              <span class="classic"> <h6 style="margin-left: 8px; font-weight: bold;">Date Created: 6/04/2020</h6>
+                <h6 style="margin-left: 8px; font-weight: bold;">Group Members:</h6><p style="margin-left: 20px;">John Smith<br>Rachel Cuomos<br>Jared James<br>Andy Vile</p></span>
+            </a>
+
+
+            <a class="tooltip" href="#" onclick="doShare('cs351_group_page');w3_close(); createFiles(['powerpoint_file_homepage'], 'cs351_group_page_content');"><img src="./resources/cs351.png" alt="cs351" style="border-radius: 10%; width: 200px; height: 120px;">
+              <span class="classic"> <h6 style="margin-left: 8px; font-weight: bold;">Date Created: 9/03/2020</h6>
+                <h6 style="margin-left: 8px; font-weight: bold;">Group Members:</h6><p style="margin-left: 20px;">John Smith<br>Alex Freed<br>Franklin Wong<br>Andy Vile</p></span>
+            </a>
+              
+            <a class="tooltip" href="#" onclick="doShare('cs373_group_page');w3_close(); createFiles(['php_file_homepage'], 'cs373_group_page_content');"><img src="./resources/cs373.png" alt="cs373" style="border-radius: 10%; width: 200px; height: 120px;">
+              <span class="classic"> <h6 style="margin-left: 8px; font-weight: bold;">Date Created: 6/03/2020</h6>
+                <h6 style="margin-left: 8px; font-weight: bold;">Group Members:</h6><p style="margin-left: 20px;">John Smith<br>Alec Best<br>Bob Bender</p></span>
+            </a>
+            <a class="tooltip" href="#" onclick="doShare('cs230_group_page');w3_close(); createFiles(['zip_file_homepage', 'excel_file_homepage', 'java_file_homepage'], 'cs230_group_page_content');"><img src="./resources/cs230.png" alt="cs230" style="border-radius: 10%; width: 200px; height: 120px;">
+              <span class="classic"> <h6 style="margin-left: 8px; font-weight: bold;">Date Created: 8/03/2020</h6>
+                <h6 style="margin-left: 8px; font-weight: bold;">Group Members:</h6><p style="margin-left: 20px;">John Smith<br>Arnold Head<br>Billie King<br>Jill Jarvis<br>Nandita Ball</p></span>
+            </a>
+           </div>
+        </div>
+
+
+
+        <!---Files on Homepage-->
+        <div class="container-1" style="margin-top: 5%;"> <!-- border-top: 5px solid rgba(87, 62, 62, 0.6);-->
+          <h3 style="font-weight: bold;">All Files:</h3>
+
+          <div class="flex-box-files">
+
+            <!--zip file-->
+            <div class="individual_files" onclick="doShare('zip_file'); w3_close();" id="zip_file_homepage"  >
+              <img src="./resources/zip.png" alt="zip" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 20/05/2020</p>
+                </div>
+              </div>
+              <a href="#">CS230_A3.zip</a>
+            </div>
+
+            <!--html file-->
+            <div class="individual_files" onclick="doShare('html_file'); w3_close();" id="html_file_homepage">
+              <img src="./resources/html.png" alt="html" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 16/04/2020</p>
+                </div>
+              </div>
+              <a href="#">CS345_A3.html</a>              
+            </div>
+            <!--css file-->
+            <div class="individual_files" onclick="doShare('css_file'); w3_close();" id="css_file_homepage">
+              <img src="./resources/css.png" alt="css" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 16/04/2020</p>
+                </div>
+              </div>
+              <a href="#">CS345_A3.css</a>
+            </div>
+            <!--word file-->
+            <div class="individual_files" onclick="doShare('word_file'); w3_close();" id="word_file_homepage">
+              <img src="./resources/word.png" alt="word" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">Rachel Cuomos</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 15/04/2020</p>
+                </div>
+              </div>
+              <a href="#">CS345_A3_Report.docx</a>
+            </div>
+            <!--pdf file-->
+            <div class="individual_files" onclick="doShare('pdf_file'); w3_close();" id="pdf_file_homepage">
+              <img src="./resources/pdf.png" alt="pdf" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">Andy Vile</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 10/04/2020</p>
+                </div>
+              </div>
+              <a href="#">CS345_A3.pdf</a>
+            </div>
+            <!--javascript file-->
+            <div class="individual_files" onclick="doShare('javascript_file'); w3_close();" id="javascript_file_homepage">
+              <img src="./resources/javascript.png" alt="javascript" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 10/04/2020</p>
+                </div>
+              </div>
+              <a href="#">CS345_A3.js</a>
+            </div>
+            <!--excel file-->
+            <div class="individual_files" onclick="doShare('excel_file'); w3_close();" id="excel_file_homepage">
+              <img src="./resources/excel.png" alt="excel" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">Arnold Head</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 10/04/2020</p>
+                </div>
+              </div>
+              <a href="#">CS230_Lab_Data.xlsx</a>
+            </div>
+            <!--powerpoint file-->
+            <div class="individual_files" onclick="doShare('powerpoint_file'); w3_close();" id="powerpoint_file_homepage">
+              <img src="./resources/powerpoint.png" alt="PowerPoint" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">Franklin Wong</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 9/04/2020</p>
+                </div>
+              </div>
+              <a href="#">CS351_Presentation.pptx</a>
+            </div>
+            <!--java file-->
+            <div class="individual_files" onclick="doShare('java_file'); w3_close();" id="java_file_homepage">
+              <img src="./resources/java.png" alt="java" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 1/04/2020</p>
+                </div>
+              </div>
+              <a href="#">CS230_A1.java</a>
+            </div>
+            <!--jpg file-->
+            <div class="individual_files" onclick="doShare('jpg_file'); w3_close();" id="jpg_file_homepage">
+              <img src="./resources/jpg.png" alt="jpg" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 28/03/2020</p>
+                </div>
+              </div>
+              <a href="#">Group_photo_1.jpg</a>
+            </div>
+            <!--php file-->
+            <div class="individual_files" onclick="doShare('php_file'); w3_close();" id="php_file_homepage">
+              <img src="./resources/php.png" alt="php" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">Bob Bender</p>
+                  <p>Date shared::</p> <p style="font-weight: bold;"> 20/03/2020</p>
+                </div>
+              </div>
+              <a href="#">CS373_practice.php</a>
+            </div>
+            <!--mp3 file-->
+            <div class="individual_files" onclick="doShare('mp3_file'); w3_close();" id="mp3_file_homepage">
+              <img src="./resources/mp3.png" alt="mp3" style="border-radius: 10%; width: 250px; height: 250px;">
+              <div class="overlay">
+                <div class="text">
+                  <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                  <p>Date shared:</p> <p style="font-weight: bold;"> 11/03/2020</p>
+                </div>
+              </div>
+              <a href="#">My_Heart_Will_Go_On.mp3</a>
+            </div>
+          </div>
+       </div>
+      </div>
+
+      
+      <!----------------------------------
+        ------Individual File Pages-------
+      ------------------------------------>
+
+      <div id="zip_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/zip.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS230_A3.zip</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 20 May 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: John Smith</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="html_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/html.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS345_A3.html</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 16 April 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: John Smith</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>CS345_A3.html is part of the COMPSCI 345 Assignment 3 High Fidelity Protoype</p>
+      </div>
+
+
+      <div id="css_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/css.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS345_A3.css</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 16 April 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: John Smith</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="word_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/word.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS345_A3_Report.docx</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 15 April 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: Rachel Cuomos</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="pdf_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/pdf.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS345_A3.pdf</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 10 April 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: Andy Vile</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="javascript_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/javascript.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS345_A3.js</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 10 April 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: John Smith</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="excel_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/excel.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS230_Lab_Data.xlsx</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 10 April 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: Arnold Head</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="powerpoint_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/powerpoint.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS351_Presentation.pptx</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 9 April 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: Franklin Wong</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="java_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/java.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS230_A1.java</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 1 April 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: John Smith</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="jpg_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/jpg.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">Group_photo_1.jpg</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 28 March 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: John Smith</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="php_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/php.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">CS373_practice.php</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 20 March 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: Bob Bender</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+
+      <div id="mp3_file" class="w3-container file">
+        <br>
+        <img class="w3-round " src="./resources/mp3.png" style="width:300px;"> <!---class="w3-animate-top"--->
+        <h5 class="w3-opacity file_title">My_Heart_Will_Go_On.mp3</h5>
+        <h4><i class="fa fa-clock-o"></i>Date shared: 11 March 2020.</h4>
+        <h4><i class="fa fa-user"></i>Shared by: John Smith</h4>
+        <br>
+        <a class="w3-button w3-light-grey" >Delete<i class="w3-margin-left fa fa-trash "></i></a>
+        <a class="w3-button w3-light-grey" >Download<i class="w3-margin-left fa fa-download"></i></a>
+        <a class="w3-button w3-light-grey" onclick="document.getElementById('id03').style.display='block'" href="#">Share<i class="w3-margin-left fa fa-share-square-o"></i></a>
+        <hr>
+        <br>
+        <h5 style="font-weight: bold; margin-left: 0px;">File Description:</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+      </div>
+      
+      <!----------------------------------
+        --------- Settings Pages----------
+      ------------------------------------>
+      <div id="settings" class="file settings setting-container" >
+
+        <h1>Settings</h1>
+        <div class="all_settings_content">
+            <div class="settings_content" >
+              <h3>Storage</h3>
+              <h5>0.8 GB of 5 GB used</h5>
+            </div>
+            <div class="settings_link space_below">
+              
+              <a href="#">View items taking storage</a>
+              <a href="#">Buy Storage</a>
+            </div>
+            <div class="settings_content space_below" >
+              <h3>Convert uploads</h3>
+              <h5> <input type="checkbox" name="checkbox" id="checkbox"> Convert uploaded files to Cloud Docs editor format</h5>
+            </div>
+            <div class="settings_content space_below" >
+              <h3>Language</h3>
+              <h5> <a href="#">Change language settings <i class="fa fa-share-square-o"></i></a></h5>
+            </div>
+            <div>
+              <a class="w3-button w3-blue w3-right" >Save <i class="fa fa-hand-peace-o"></i></a>
+            </div>
+        </div>
+
+      </div>
+      <div id="MyDrive" class="container-1 file group_page">
+        <h2 style="font-weight: bold;">My Drive</h2>
+        <h4 style="font-weight: bold;">These files only available to me:</h4>
+        <div class="flex-box-files" id="My_Home_Drive_page_content" style="width:800px;">
+          <div class="individual_files" onclick="doShare('jpg_file'); w3_close();" id="jpg_file_homepage">
+            <img src="./resources/jpg.png" alt="jpg" style="border-radius: 10%; width: 250px; height: 250px;">
+            <div class="overlay">
+              <div class="text">
+                <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                <p>Date Uploaded::</p> <p style="font-weight: bold;"> 28/03/2020</p>
+              </div>
+            </div>
+            <a href="#">Group_photo_1.jpg</a>
+          </div>          
+          
+          <div class="individual_files" onclick="doShare('mp3_file'); w3_close();" id="mp3_file_homepage">
+            <img src="./resources/mp3.png" alt="mp3" style="border-radius: 10%; width: 250px; height: 250px;">
+            <div class="overlay">
+              <div class="text">
+                <p>Shared by:</p> <p style="font-weight: bold;">John Smith</p>
+                <p>Date Uploaded::</p> <p style="font-weight: bold;"> 11/03/2020</p>
+              </div>
+            </div>
+            <a href="#">My_Heart_Will_Go_On.mp3</a>
+          </div>
+        </div>
+      </div>
+
+      
+
+
+
+
+      <!--Group Page CS345 GROUP 6-->
+      <div id="cs345_group_page" class="container-1 file group_page">
+        <h2 style="font-weight: bold;">COMPSCI 345 Group 6</h2>
+        <h4 style="font-weight: bold;">Group Members: </h4>
+        <h6><i class="fa fa-user-circle-o"></i> John Smith &nbsp Email: <a href="#">js666@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Rachel Cuomos &nbsp Email: <a href="#">rc886@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Jared James &nbsp Email: <a href="#">jj697@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Andy Vile &nbsp Email: <a href="#">av345@aucklanduni.ac.nz</a></h6>
+        
+        <div class="container-1" style="margin-top: 5%; border-top: 5px solid rgba(87, 62, 62, 0.6);" >
+          <h3 style="font-weight: bold;">Files:</h3>
+
+          <div class="flex-box-files" id="cs345_group_page_content"></div>
+        </div> 
+      </div>
+      
+      <!--Group Page CS351 GROUP 10-->
+      <div id="cs351_group_page" class="container-1 file group_page">
+        <h2 style="font-weight: bold;">COMPSCI 351 Group 10</h2>
+        <h4 style="font-weight: bold;">Group Members: </h4>
+        <h6><i class="fa fa-user-circle-o"></i> John Smith &nbsp Email: <a href="#">js666@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Alex Freed &nbsp Email: <a href="#">af789@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Franklin Wong &nbsp Email: <a href="#">fw123@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Andy Vile &nbsp Email: <a href="#">av345@aucklanduni.ac.nz</a></h6>
+        
+        <div class="container-1" style="margin-top: 5%; border-top: 5px solid rgba(87, 62, 62, 0.6);" >
+          <h3 style="font-weight: bold;">Files:</h3>
+
+          <div class="flex-box-files" id="cs351_group_page_content"></div>
+        </div> 
+      </div>
+
+      <!--Group Page CS373 GROUP 10-->
+      <div id="cs373_group_page" class="container-1 file group_page">
+        <h2 style="font-weight: bold;">COMPSCI 373 Group 10</h2>
+        <h4 style="font-weight: bold;">Group Members: </h4>
+        <h6><i class="fa fa-user-circle-o"></i> John Smith &nbsp Email: <a href="#">js666@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Alec Best &nbsp Email: <a href="#">ab753@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Bob Bender &nbsp Email: <a href="#">bb159@aucklanduni.ac.nz</a></h6>
+        
+        
+        <div class="container-1" style="margin-top: 5%; border-top: 5px solid rgba(87, 62, 62, 0.6);" >
+          <h3 style="font-weight: bold;">Files:</h3>
+
+          <div class="flex-box-files" id="cs373_group_page_content"></div>
+        </div> 
+      </div>
+
+      <!--Group Page CS230 GROUP 20-->
+      <div id="cs230_group_page" class="container-1 file group_page">
+        <h2 style="font-weight: bold;">COMPSCI 230 Group 20</h2>
+        <h4 style="font-weight: bold;">Group Members: </h4>
+        <h6><i class="fa fa-user-circle-o"></i> John Smith &nbsp Email: <a href="#">js666@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Arnold Head &nbsp Email: <a href="#">ah563@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Billie King &nbsp Email: <a href="#">bk478@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Jill Jarvis &nbsp Email: <a href="#">jv852@aucklanduni.ac.nz</a></h6>
+        <h6><i class="fa fa-user-circle-o"></i> Nandita Ball &nbsp Email: <a href="#">nb666@aucklanduni.ac.nz</a></h6>
+        
+        
+        <div class="container-1" style="margin-top: 5%; border-top: 5px solid rgba(87, 62, 62, 0.6);" >
+          <h3 style="font-weight: bold;">Files:</h3>
+
+          <div class="flex-box-files" id="cs230_group_page_content" style="width:1000px"></div>
+        </div> 
+      </div>
+      
+
+    </div>
+
+    <!-- Modal that pops up when your file is successfully shared -->
+    <div id="successNotification" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="w3-container w3-padding w3-red" >
+          <span onclick="document.getElementById('successNotification').style.display='none'"
+          class="w3-button w3-red w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
+          <h2>Awesome! Sharing Successful</h2>
+        </div>  
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal that pops up when your file is successfully uploaded -->
+    <div id="successfulUpload" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="w3-container w3-padding w3-red" >
+          <span onclick="document.getElementById('successfulUpload').style.display='none'"
+          class="w3-button w3-red w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
+          <h2>Your file is uploaded!</h2>
+        </div>  
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal that pops up when you click on Upload Icon -->
+    <div id="id02" class="w3-modal" style="z-index:4">
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="w3-container w3-padding w3-red">
+          <span onclick="document.getElementById('id02').style.display='none'; resetUploadForm('myFile', 'upload_text'); "
+          class="w3-button w3-red w3-right w3-xxlarge"><i class="fa fa-remove"></i></span>
+          <h2>Upload File</h2>
+        </div>
+
+        <div class="w3-panel">
+          <input type="file" id="myFile">
+          <div style="margin-top: 10px; margin-bottom: 10px;">
+            <label style="font-weight: bold;">Leave a brief description (Optional)</label>
+            <textarea   style="height:40px;width:100%; OVERFLOW: hidden" warp="virtual" placeholder="description" id="upload_text"></textarea>          
+        </div>
+          <div class="w3-section">
+            <a class="w3-button w3-red" onclick="document.getElementById('id02').style.display='none'; resetUploadForm('myFile', 'upload_text')">Cancel  <i class="fa fa-remove"></i></a>
+            <a class="w3-button w3-light-grey w3-right" onclick="validateFileUpload()">Upload  <i class="fa fa-upload"></i></a> 
+          </div>    
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal that pops up when you click on "Share" on file page -->
+    <div id="id03" class="w3-modal" style="z-index:4" >
+      <div class="w3-modal-content w3-animate-zoom">
+        <div class="w3-container w3-padding w3-red">
+           <span onclick="document.getElementById('id03').style.display='none'; resetShareForm('email2','textArea2', 'dropdown-list2');"class="w3-button w3-red w3-right w3-xxlarge" ><i class="fa fa-remove"></i></span>
+          <h2>Share File</h2>
+        </div>
+        <div class="w3-panel">
+          <div class="copyToShare">
+            <label class="w3-left" style="font-weight: bold;">Share file with link</label>
+            <a class="copy-button" onclick="getLink(false)" > Get Shareable Link  <i class="fa fa-copy"></i></a> 
+            
+          </div>
+          
+  
+          <label style="font-weight: bold;">Share to email (use semicolon to seperate multiple email addresses)</label>
+          <br>
+          <input class="w3-input w3-border w3-margin-bottom Email" type="email" multiple placeholder = "Enter email address" id="email2" onblur="withinOrganisation('email2');" >
+          <div class="copyToShare">
+            <label style="font-weight: bold;">Share to groups</label>
+            <label class="w3-left" style="font-weight: bold;">Recipient's permission: 
+              <select name="shareLink" id="dropdown-list2">
+                <option value="View">View</option>
+                <option value="Edit">Edit</option>
+                <option value="Download">Download</option>
+              </select>
+            </label>
+          </div>
+        
+          <div class="share_to_groups">
+            <div>
+              <input type="checkbox" class="checkbox share-checkbox" id="CS345_Group_6_checkbox2">
+              <label for="CS345_Group_6_checkbox2"> CS 345 Group 6</label>
+            </div>
+            <div>
+              <input type="checkbox" class="checkbox share-checkbox" id="CS351_Group_10_checkbox2">
+              <label for="CS351_Group_10_checkbox2"> CS 351 Group 10</label>
+            </div>
+            <div>
+              <input type="checkbox" class="checkbox share-checkbox" id="CS373_Group_10_checkbox3">
+              <label for="CS373_Group_10_checkbox3"> CS 373 Group 10</label>
+            </div>
+            <div>
+              <input type="checkbox" class="checkbox share-checkbox" id="CS230_Group_20_checkbox4">
+              <label for="CS230_Group_20_checkbox4"> CS 230 Group 20</label>
+            </div>
+          </div>
+      
+          <label style="font-weight: bold;">Leave a brief description (optional)</label>
+          <textarea   style="height:40px;width:100%; OVERFLOW: hidden" warp="virtual" placeholder="description" id="textArea2"></textarea>
+          <div></div>
+          <div class = "notifyingMyself&Members" style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 20px; margin-bottom: 0px; padding-bottom: 0px; font-weight: bold; ">
+            <div>
+              <input type = "checkbox" class="checkbox" id="notifyMe2"><!--style="float: right; margin-top: 20px; margin-right: 5px;"-->
+              <label for="notifyMe2">Notify me when group members open the file(s) </label> <!-- style="float:right; margin-top: 15px;"-->
+            </div>
+            <div>
+              <input type = "checkbox" class="checkbox" id="notifyGroupMembers2"><!--style="float: right; margin-top: 20px; margin-right: 5px;"-->
+              <label for="notifyGroupMembers2">Notify group members </label> <!-- style="font-weight: bold; float:right; margin-top: 15px;"-->
+            </div>
+          </div>
+          <div class="w3-section">
+            <a class="w3-button w3-red" onclick="document.getElementById('id03').style.display='none'; resetShareForm('email2','textArea2',  'dropdown-list2'); ">Cancel  <i class="fa fa-remove"></i></a>
+    
+            <a class="w3-button w3-light-grey w3-right" onclick="preventEmptyForm(false, 'id03', 'email2','textArea2',  'dropdown-list2');"> Share  <i class="fa fa-paper-plane"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    
+
+    <script src="./js/script.js" ></script>
+
+
+
+</body>
+</html> 
+
